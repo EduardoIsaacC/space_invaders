@@ -1,0 +1,4 @@
+@startuml Space_Invaders
+class Juego
+
+@enduml
