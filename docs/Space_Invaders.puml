@@ -1,5 +1,11 @@
 @startuml Space_Invaders
 class Juego
-class Muro 
+class Jugador
+class IA
+class Muro
+class Nave
+class Enemigo 
+class Misil 
+class Colisionable 
 
 @enduml
