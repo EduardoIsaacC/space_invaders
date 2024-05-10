@@ -3,9 +3,24 @@ class Juego
 class Jugador
 class IA
 class Muro
-class Nave
+class Tanque
 class Enemigo 
 class Misil 
 class Colisionable 
+class Boton
+class Platillo
 
+Jugador o-- Tanque
+Muro --|> Colisionable
+Misil --|> Colisionable
+IA o-- Enemigo
+Enemigo o-- Misil
+Boton --|> Misil
+Tanque *--  Misil
+Jugador o-- Boton
+Enemigo --|> Colisionable
+Tanque --|> Colisionable
+Platillo --|> Colisionable
+Tanque o-- Misil
+Enemigo *--  Misil
 @enduml
