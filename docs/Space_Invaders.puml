@@ -1,4 +1,5 @@
 @startuml Space_Invaders
 class Juego
+class Muro 
 
 @enduml
