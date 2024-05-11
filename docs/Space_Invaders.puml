@@ -1,42 +1,43 @@
 @startuml Space_Invaders
 class Juego{
-*iniciarJuego
-*finJuego
+- iniciarJuego
+- finJuego
 }
 class Jugador{
-* moverTanque
+- moverTanque
+- 
 }
 class IA{
-* atacarJugador
-* moverse
--izquierda
--derecha
+- atacarJugador
+- moverse
+* izquierda
+* derecha
 }
 class Muro{
-*proteger
+- proteger
 }
 class Tanque{
-*misparar
-*atacar
-*moverse
--izquierda
--derecha
+- misparar
+- atacar
+- moverse
+*izquierda
+*derecha
 }
 class Enemigo{
-*atacarJugador
+-atacarJugador
 }
 class Misil{
-*destruirEnemigo
-*destruirJugador
+-destruirEnemigo
+-destruirJugador
 }
 class Colisionable 
 class Boton{
-*Disparar
+-Disparar
 }
 class PlatilloEnemigo{
-*Moverse
--Izquierda
--Derecha
+-Moverse
+*Izquierda
+*Derecha
 }
 
 Jugador o-- Tanque
