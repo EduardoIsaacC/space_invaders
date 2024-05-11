@@ -1,11 +1,11 @@
 @startuml Space_Invaders
 class Juego{
 - iniciarJuego
-- finJuego
+- finalzarJuego
 }
 class Jugador{
 - moverTanque
-- 
+- puntaje
 }
 class IA{
 - atacarJugador
@@ -23,7 +23,7 @@ class Tanque{
 *izquierda
 *derecha
 }
-class Enemigo{
+class NavesEnemigas{
 -atacarJugador
 }
 class Misil{
@@ -39,18 +39,29 @@ class PlatilloEnemigo{
 *Izquierda
 *Derecha
 }
+class PalancaMovimiento{
+    -Moverse
+*Izquierda
+*Derecha
+}
+class MapaEspacio{
+    -personajesVolando
+}
 
 Jugador o-- Tanque
 Muro --|> Colisionable
 Misil --|> Colisionable
-IA o-- Enemigo
-Enemigo o-- Misil
+IA o-- NavesEnemigas
+NavesEnemigas o-- Misil
 Boton --|> Misil
 Tanque *--  Misil
 Jugador o-- Boton
-Enemigo --|> Colisionable
+NavesEnemigas --|> Colisionable
 Tanque --|> Colisionable
 PlatilloEnemigo --|> Colisionable
 Tanque o-- Misil
-Enemigo *--  Misil
+NavesEnemigas *--  Misil
+PlatilloEnemigo --|> IA
+Jugador o-- PalancaMovimiento
+Juego *-- MapaEspacio
 @enduml

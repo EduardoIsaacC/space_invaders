@@ -19,9 +19,9 @@ int main(int argc, char const *argv[])
         pantalla.Clear();
         this_thread::sleep_for(0.1s);
 
-        pantalla.PixelAt(x,4).character="            , ";
-        pantalla.PixelAt(x,5).character=" Max::,.-c/-. ";
-        pantalla.PixelAt(x,6).character="    (_)'==(_) ";
+        pantalla.PixelAt(x,4).character="    ";
+        pantalla.PixelAt(x,5).character="  ";
+        pantalla.PixelAt(x,6).character="    ";
 
         pantalla.Print();
         cout<<pantalla.ResetPosition();
