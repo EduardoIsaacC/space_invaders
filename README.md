@@ -4,5 +4,6 @@
 
 [Informacion del juego](https://es.wikipedia.org/wiki/Space_Invaders)
 
-##Lista_de_Personajes
+#Lista_de_Personajes
+
 *Lista de personajes
