@@ -19,8 +19,6 @@ int main(int argc, char const *argv[])
     while (true)
     {
         this_thread::sleep_for(0.1s);
-        fotograma++;
-        Element personaje = spinner(21, fotograma) | bold | color(Color::Red) | bgcolor(Color::White);
         Element dibujo = hbox({nave.GetElement(), muro.GetElement(), enemigo.GetElement(), platillo.GetElement()});
         Screen pantalla = Screen::Create(Dimension::Full());
         Render(pantalla, dibujo);
