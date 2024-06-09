@@ -16,7 +16,7 @@ class IA{
 class Muro{
 - proteger
 }
-class Tanque{
+class Tanque{  
 - misparar
 - atacar
 - moverse
