@@ -16,20 +16,20 @@ Wall :: Wall(int x, int y, Texture &tecture){
 }
 void Wall :: Update(){
     for(int i = 0; i<5; i++){
-        sprites[i].setTextureRect(IntRect(16*8+9+state[i].fst*9,14*8+14+state[i].snd*9,8,8));
+        sprites[i].setTextureRect(IntRect(16*8+9+state[i].first*9,14*8+14+state[i].second*9,8,8));
     }
 }
 void Wall :: Pos(vector<Vector2f> &pos){
     pos.clear();
     for(int i = 0; i < 5; i++){
-        if(state[i].fst+state[i].snd<5){
-            pos.push_back(sprites[i].getPos());
+        if(state[i].first+state[i].second<5){
+            pos.push_back(sprites[i].getPosition());
         }
     }
 }
 void Wall :: Collision(int indice, bool up){
-    if(up) state[indice].fst++;
-    else state[indice].snd++;
+    if(up) state[indice].first++;
+    else state[indice].second++;
 }
 void Wall :: draw(RenderTarget &rt, RenderStates rs) const{
     for(int i = 0; i < 5; i++){

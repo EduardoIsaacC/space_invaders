@@ -59,7 +59,10 @@ int main(){
         }  
     }
     
-
+    vector<Wall> wall(3,Wall(0,0,spritesheet));
+    for(int i=0; i<3; i++){
+        wall[i]=Wall(200+100*i,460,spritesheet);
+    }
     
     RenderWindow window(VideoMode(600,600),"Space Invaders");
     window.setFramerateLimit(60);
@@ -96,7 +99,6 @@ int main(){
             window.draw(bulletsEnemies[i]);
         }
 
-        
 
         for(int i=0; i < (int)enemies.size() ;i++){
             for (int j = 0; j < enemies[i].size() ; j++){
@@ -104,6 +106,8 @@ int main(){
         }
         }
         
+        for(int i=0; i<3; i++) window.draw(wall[i]);
+
         window.draw(player);
 
 
