@@ -1,6 +1,6 @@
 #include "Wall.hpp"
 
-Wall :: Wall(int x, int y, Texture &tecture){
+Wall :: Wall(int x, int y, Texture &texture){
     sprites.resize(5);
     state.resize(5,{0,0});
     for(int i = 0; i<5; i++){
