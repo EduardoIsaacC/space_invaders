@@ -1,0 +1,38 @@
+#include "Wall.hpp"
+
+Wall :: Wall(int x, int y, Texture &tecture){
+    sprites.resize(5);
+    state.resize(5,{0,0});
+    for(int i = 0; i<5; i++){
+        sprites[i].setTexture(texture);
+        sprites[i].setTextureRect(IntRect(16*8+9,14*8+14,8,8));
+        sprites[i].setScale(3,3);
+    }
+    sprites[0].setPosition(x,y);
+    sprites[1].setPosition(x+24,y);
+    sprites[2].setPosition(x+48,y);
+    sprites[3].setPosition(x,y+24);
+    sprites[4].setPosition(x+48,y+24);
+}
+void Wall :: Update(){
+    for(int i = 0; i<5; i++){
+        sprites[i].setTextureRect(IntRect(16*8+9+state[i].fst*9,14*8+14+state[i].snd*9,8,8));
+    }
+}
+void Wall :: Pos(vector<Vector2f> &pos){
+    pos.clear();
+    for(int i = 0; i < 5; i++){
+        if(state[i].fst+state[i].snd<5){
+            pos.push_back(sprites[i].getPos());
+        }
+    }
+}
+void Wall :: Collision(int indice, bool up){
+    if(up) state[indice].fst++;
+    else state[indice].snd++;
+}
+void Wall :: draw(RenderTarget &rt, RenderStates rs) const{
+    for(int i = 0; i < 5; i++){
+        rt.draw(sprites[i], rs);
+    }
+}

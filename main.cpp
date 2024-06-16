@@ -5,6 +5,7 @@
 #include "Player.hpp"
 #include "Bullet.hpp"
 #include"Enemie.hpp"
+#include "Wall.hpp"
 
 using namespace std;
 using namespace sf;
@@ -57,6 +58,8 @@ int main(){
             enemies[i][j]=Enemie(j*30+24,i*30+24,spritesheet,sectionSpritesheet);
         }  
     }
+    
+
     
     RenderWindow window(VideoMode(600,600),"Space Invaders");
     window.setFramerateLimit(60);
