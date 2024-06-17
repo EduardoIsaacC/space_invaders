@@ -1,5 +1,5 @@
-//#include<C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Bullet.hpp>
-#include<C:\Users\Aldo PC\Documents\GitHub\space_invaders\include\Bullet.hpp>
+#include<C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Bullet.hpp>
+//#include<C:\Users\Aldo PC\Documents\GitHub\space_invaders\include\Bullet.hpp>
 
 Bullet::Bullet(int x, int y, Texture &texture,IntRect intRect, int v){
     sprite.setTexture(texture);
