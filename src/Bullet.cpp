@@ -1,4 +1,4 @@
-#include"Bullet.hpp"
+#include<Bullet.hpp>
 
 Bullet::Bullet(int x, int y, Texture &texture,IntRect intRect, int v){
     sprite.setTexture(texture);

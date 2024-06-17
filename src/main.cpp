@@ -1,26 +1,42 @@
-#include<iostream>
-#include<SFML/Graphics.hpp>
-#include<vector>
-#include<time.h>
-#include "Player.hpp"
-#include "Bullet.hpp"
-#include"Enemie.hpp"
-#include "Wall.hpp"
+#include <iostream>
+#include <SFML/Graphics.hpp>
+#include <vector>
+#include <time.h>
+#include <Player.hpp>
+#include <Bullet.hpp>
+#include <Enemie.hpp>
+#include <Wall.hpp>
 
 using namespace std;
 using namespace sf;
 
-void UpdatePlayer(Player &player, bool &bulletActive, Bullet &bulletPlayer);
-void UpdateBulletPlayer(Bullet &bulletPlayer, bool &bulletActive,vector<vector<Enemie>> &enemies, IntRect &bulletRect, IntRect &enemieRect);
-void UpdateEnemies(vector<vector<Enemie>> &enemies, int &dirEnemies, int &minX, int &maxX);
-void UpdateBulletsEnemies(Player &player, IntRect &bulletRect);
+void UpdatePlayer(Player &player, Bullet &bulletPlayer);
+void UpdateBulletPlayer(Bullet &bulletPlayer, vector<vector<Enemie>> &enemies);
+void UpdateEnemies(vector<vector<Enemie>> &enemies);
+void UpdateBulletsEnemies(Player &player);
+void UpdateWall(vector <Wall> &wall, Bullet &bulletPlayer);
 
 Texture spritesheet;
+
 int timer=0;
 int rythm=125;
+
+int dirEnemies=1;
+int maxX, minX; //We declared this global so we don't have to declare it in the void
+
 vector<Bullet> bulletsEnemies;
 
-IntRect playerRect;
+vector<pair<int,Vector2f>> positionWall;
+
+Vector2f sectionSpritesheet;
+
+IntRect playerRect; //We declared this global so we don't have to declare it in the void
+IntRect bulletRect; //We declared this global so we don't have to declare it in the void
+IntRect enemieRect; //We declared this global so we don't have to declare it in the void
+IntRect wallRect;
+
+
+bool bulletActive=false; //We declared this global so we don't have to declare it in the void
 
 
 int main(){
@@ -31,17 +47,9 @@ int main(){
 
     Player player(288,555,spritesheet);
 
-    bool bulletActive=false;
     Bullet bulletPlayer(0,0,spritesheet,IntRect(0,0,0,0),0);
-    IntRect bulletRect;
 
     vector<vector<Enemie>> enemies(7,vector<Enemie>(12,Enemie(0,0,spritesheet,Vector2f(0,0))));
-    IntRect enemieRect;
-    Vector2f sectionSpritesheet;
-
-    int dirEnemies=1;
-
-    int maxX, minX;
 
     for(int i=0; i < 7 ;i++){
             for (int j = 0; j < 12 ; j++)
@@ -60,27 +68,33 @@ int main(){
     }
     
     vector<Wall> wall(3,Wall(0,0,spritesheet));
+
     for(int i=0; i<3; i++){
-        wall[i]=Wall(200+100*i,460,spritesheet);
+        wall[i]=Wall(80+200*i,460,spritesheet);//Move to the left, 200 is the seperation between walls,  altitude
     }
     
+
     RenderWindow window(VideoMode(600,600),"Space Invaders");
     window.setFramerateLimit(60);
 
     while(window.isOpen()){
+
         Event event;
         while(window.pollEvent(event)){
             if(event.type=Event::Closed)
                 window.close();
         }
 
-        UpdatePlayer(player,bulletActive,bulletPlayer);
+        UpdatePlayer(player,bulletPlayer);
 
-        UpdateBulletPlayer(bulletPlayer, bulletActive, enemies,bulletRect,enemieRect );
+        UpdateBulletPlayer(bulletPlayer, enemies);
 
-        UpdateEnemies(enemies, dirEnemies, minX,maxX);
+        UpdateEnemies(enemies);
 
-        UpdateBulletsEnemies(player, bulletRect);
+        UpdateBulletsEnemies(player);
+
+        UpdateWall(wall,bulletPlayer);
+
 
         if(!player.Alive()) window.close();
 
@@ -115,7 +129,8 @@ int main(){
     }
     return 0; 
 }
-void UpdatePlayer(Player &player, bool &bulletActive,Bullet &bulletPlayer){
+
+void UpdatePlayer(Player &player, Bullet &bulletPlayer){
 
      player.Update();
 
@@ -126,7 +141,7 @@ void UpdatePlayer(Player &player, bool &bulletActive,Bullet &bulletPlayer){
         }
 }
 
-void UpdateBulletPlayer(Bullet &bulletPlayer, bool &bulletActive,vector<vector<Enemie>> &enemies, IntRect &bulletRect, IntRect &enemieRect){
+void UpdateBulletPlayer(Bullet &bulletPlayer, vector<vector<Enemie>> &enemies){
   
     if(bulletActive) {//si hay una bala 
             bulletPlayer.Update();//llamamos al metodo update 
@@ -157,7 +172,8 @@ void UpdateBulletPlayer(Bullet &bulletPlayer, bool &bulletActive,vector<vector<E
     }
 }//por lo tanto arroja a que la bala y ano esta activa por lo tanro puede volver a disparar 
 
-void UpdateEnemies(vector<vector<Enemie>> &enemies, int &dirEnemies, int &minX, int &maxX){
+void UpdateEnemies(vector<vector<Enemie>> &enemies){
+
     maxX=0;
     minX=600;
         for(int i=0; i < (int)enemies.size() ;i++){
@@ -192,7 +208,7 @@ void UpdateEnemies(vector<vector<Enemie>> &enemies, int &dirEnemies, int &minX, 
         }
 }
 
-void UpdateBulletsEnemies(Player &player, IntRect &bulletRect){
+void UpdateBulletsEnemies(Player &player){
 
     for(int i=0; i < (int)bulletsEnemies.size(); i++){
         bulletsEnemies[i].Update();
@@ -210,6 +226,44 @@ void UpdateBulletsEnemies(Player &player, IntRect &bulletRect){
         if(playerRect.intersects(bulletRect)){
             bulletsEnemies.erase(bulletsEnemies.begin()+i);
             player.Takelife();
+        }
+    }
+}
+
+
+void UpdateWall(vector <Wall> &wall, Bullet &bulletPlayer){
+
+    if(bulletActive){
+        bulletRect=IntRect(bulletPlayer.Pos().x,bulletPlayer.Pos().y,3,8);
+        for(int i=0; i < 3; i++){
+            wall[i].Pos(positionWall);
+            for(int j=0; j < (int) positionWall.size(); j++){
+                wallRect=IntRect(positionWall[j].second.x,positionWall[j].second.y,24,24);
+                if(wallRect.intersects(bulletRect)){
+                    wall[i].Collision(positionWall[i].first,false);
+                    bulletActive=false;
+                }
+            }
+            if(!bulletActive) break;
+        }
+    }
+
+    bool elim=false;
+
+    for(int h=0; h < (int)bulletsEnemies.size(); h++){
+        bulletRect=IntRect(bulletsEnemies[h].Pos().x,bulletsEnemies[h].Pos().y,3,8);
+        for(int i=0; i < 3; i++){
+            wall[i].Pos(positionWall);
+            for(int j=0; j < (int) positionWall.size(); j++){
+                wallRect=IntRect(positionWall[j].second.x,positionWall[j].second.y,24,24);
+                if(wallRect.intersects(bulletRect)){
+                    wall[i].Collision(positionWall[i].first,true);
+                    bulletsEnemies.erase(bulletsEnemies.begin()+h);
+                    elim=true;
+                    break;
+                }
+            }
+            if(elim) break;
         }
     }
 }

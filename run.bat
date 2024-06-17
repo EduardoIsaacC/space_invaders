@@ -1,2 +1,2 @@
-g++ main.cpp Player.cpp Bullet.cpp Enemie.cpp Wall.cpp -lsfml-system -lsfml-window -lsfml-graphics -o Game
+g++ src/main.cpp src/Player.cpp src/Bullet.cpp src/Enemie.cpp src/Wall.cpp -lsfml-system -lsfml-window -lsfml-graphics -o Game
 Game

@@ -11,7 +11,7 @@ class Wall : public Drawable{
         vector<pair<int,int>> state;
     public:
         Wall(int x, int y, Texture &tecture);
-        void Pos(vector<Vector2f> &pos);
+        void Pos(vector<pair<int,Vector2f>> &pos);
         void Collision(int indice, bool up);
         void Update();
         virtual void draw(RenderTarget &rt, RenderStates rs) const;

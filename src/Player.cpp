@@ -1,4 +1,4 @@
-#include "Player.hpp"
+#include <Player.hpp>
 
 Player::Player(int x, int y, Texture &texture){
     sprite.setTexture(texture);
