@@ -2,10 +2,10 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <time.h>
-#include <Player.hpp>
-#include <Bullet.hpp>
-#include <Enemie.hpp>
-#include <Wall.hpp>
+#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Player.hpp>
+#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Bullet.hpp>
+#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Enemie.hpp>
+#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Wall.hpp>
 
 using namespace std;
 using namespace sf;

@@ -1,4 +1,4 @@
-#include <Player.hpp>
+#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Player.hpp>
 
 Player::Player(int x, int y, Texture &texture){
     sprite.setTexture(texture);
