@@ -32,4 +32,4 @@
 
 SFML es apreciada por su simplicidad y facilidad de uso, lo que la hace ideal tanto para desarrolladores principiantes como para aquellos que buscan una biblioteca ligera y poderosa para proyectos multimedia. La comunidad de GitHub contribuye activamente al desarrollo de SFML, proporcionando mejoras, reportando errores y creando extensiones y herramientas adicionales que enriquecen la funcionalidad de la biblioteca.
 
-En resumen, SFML es una herramienta versátil y eficiente para desarrollar aplicaciones multimedia y videojuegos, proporcionando una amplia gama de funcionalidades con una interfaz intuitiva y fácil de usar. ***
+En resumen, SFML es una herramienta versátil y eficiente para desarrollar aplicaciones multimedia y videojuegos, proporcionando una amplia gama de funcionalidades con una interfaz intuitiva y fácil de usar.***
