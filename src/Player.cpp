@@ -16,8 +16,8 @@ void Player::Update(){
     if(Keyboard::isKeyPressed(Keyboard::Left)&&sprite.getPosition().x+vel*-1>0){
         sprite.move(vel*-1,0);
     }
-    //system("clear");
-    //cout<<life<<'\n';
+    system("cls");
+    cout<<life<<'\n';
 }
 
 
