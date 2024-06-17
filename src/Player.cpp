@@ -1,5 +1,5 @@
-#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Player.hpp>
-
+//#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Player.hpp>
+#include<C:\Users\Aldo PC\Documents\GitHub\space_invaders\include\Player.hpp>
 Player::Player(int x, int y, Texture &texture){
     sprite.setTexture(texture);
     sprite.setTextureRect(IntRect(13*8+8,7*8+7,16,8));
@@ -16,8 +16,8 @@ void Player::Update(){
     if(Keyboard::isKeyPressed(Keyboard::Left)&&sprite.getPosition().x+vel*-1>0){
         sprite.move(vel*-1,0);
     }
-    //system("clear");
-    //cout<<life<<'\n';
+    system("cls");
+    cout<<life<<'\n';
 }
 
 

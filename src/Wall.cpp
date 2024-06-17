@@ -1,4 +1,5 @@
-#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Wall.hpp>
+//#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Wall.hpp>
+#include<C:\Users\Aldo PC\Documents\GitHub\space_invaders\include\Wall.hpp>
 
 Wall :: Wall(int x, int y, Texture &texture){
     sprites.resize(5);
