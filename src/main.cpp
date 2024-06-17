@@ -23,6 +23,7 @@ int rythm=125;
 
 int dirEnemies=1;
 int maxX, minX; //We declared this global so we don't have to declare it in the void
+int cantEnemies;
 
 vector<Bullet> bulletsEnemies;
 
@@ -96,15 +97,29 @@ int main(){
         UpdateWall(wall,bulletPlayer);
 
 
-        if(!player.Alive()) window.close();
+        if(!player.Alive()){system("clear"); cout<<"You lost\n"; window.close();}
 
         for(int i=0; i < (int)enemies.size() ;i++){
             for (int j = 0; j < enemies[i].size() ; j++){
                 if(enemies[i][j].Pos().y>=480){
+                    system("clear");
+                    cout<<"You lost\n";
                     window.close();
+                    return 0;
                 }
             }
         }
+
+        cantEnemies=0;
+
+        for(int i=0; i < (int)enemies.size() ;i++) cantEnemies+=(int)enemies[i].size();
+        
+        if(cantEnemies==0){
+            system("clear");
+            cout<<"You Win\n";
+            window.close();
+        }
+
         window.clear();
 
         if (bulletActive) window.draw(bulletPlayer);
@@ -199,7 +214,6 @@ void UpdateEnemies(vector<vector<Enemie>> &enemies){
         timer++;
 
         if(timer>=rythm&&(int)enemies[0].size()>0){
-            cout<<timer<<'\n';
             timer=0;
             srand(time(NULL));
             int enem = rand()%(int)enemies[0].size();
@@ -220,7 +234,7 @@ void UpdateBulletsEnemies(Player &player){
         }
     }
 
-    playerRect=IntRect(player.pos().x, player.pos().y,48,24);
+    playerRect=IntRect(player.pos().x, player.pos().y+9,48,15);
     for(int i=0; i<(int)bulletsEnemies.size(); i++){
         bulletRect = IntRect(bulletsEnemies[i].Pos().x,bulletsEnemies[i].Pos().y,3,24);
         if(playerRect.intersects(bulletRect)){
@@ -240,7 +254,7 @@ void UpdateWall(vector <Wall> &wall, Bullet &bulletPlayer){
             for(int j=0; j < (int) positionWall.size(); j++){
                 wallRect=IntRect(positionWall[j].second.x,positionWall[j].second.y,24,24);
                 if(wallRect.intersects(bulletRect)){
-                    wall[i].Collision(positionWall[i].first,false);
+                    wall[i].Collision(positionWall[j].first,false);
                     bulletActive=false;
                 }
             }
@@ -266,4 +280,6 @@ void UpdateWall(vector <Wall> &wall, Bullet &bulletPlayer){
             if(elim) break;
         }
     }
-}
+    
+    for (int i=0; i < 3; i++) wall[i].Update();
+} 

@@ -2,10 +2,10 @@
 
 Wall :: Wall(int x, int y, Texture &texture){
     sprites.resize(5);
-    state.resize(5,{1,0});
+    state.resize(5,{0,0});
     for(int i = 0; i<5; i++){
         sprites[i].setTexture(texture);
-        sprites[i].setTextureRect(IntRect(16*8+9,14*8+14,8,8));
+        sprites[i].setTextureRect(IntRect(16*8+9+state[i].first*9,14*8+14+state[i].second*9,8,8));
         sprites[i].setScale(3,3);
     }
     sprites[0].setPosition(x,y);

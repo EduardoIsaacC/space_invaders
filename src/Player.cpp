@@ -10,12 +10,14 @@ Player::Player(int x, int y, Texture &texture){
 }
 
 void Player::Update(){
-    if(Keyboard::isKeyPressed(Keyboard::Right)&&sprite.getPosition().x+vel<550){
+    if(Keyboard::isKeyPressed(Keyboard::Right)&&sprite.getPosition().x+vel<552){
         sprite.move(vel,0);
     }
     if(Keyboard::isKeyPressed(Keyboard::Left)&&sprite.getPosition().x+vel*-1>0){
         sprite.move(vel*-1,0);
     }
+    //system("clear");
+    //cout<<life<<'\n';
 }
 
 

@@ -9,7 +9,7 @@ Enemie::Enemie(int x, int y, Texture &texture, Vector2f p){
     state=0;
     timer=0;
     vel=24;
-    rythm=100;
+    rythm=150;
 }
 
 void Enemie::Update(){
