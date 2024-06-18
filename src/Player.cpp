@@ -1,5 +1,5 @@
-#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Player.hpp>
-//#include<C:\Users\Aldo PC\Documents\GitHub\space_invaders\include\Player.hpp>
+//#include <C:/Users/Eduardo/Documents/GitHub/space_invaders/include/Player.hpp>
+#include<C:\Users\Aldo PC\Documents\GitHub\space_invaders\include\Player.hpp>
 Player::Player(int x, int y, Texture &texture){
     sprite.setTexture(texture);
     sprite.setTextureRect(IntRect(13*8+8,7*8+7,16,8));
