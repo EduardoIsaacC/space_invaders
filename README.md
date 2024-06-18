@@ -9,26 +9,26 @@
 * Enemies
 * Wall
 
-### ***Descripción de cada uno de los personajes***
+### ***Character´s Description***
 
-***Un jugador controlara un tanque por medio de una palanca y un boton, la misión del tanque es destruir las naves antes de que lleguen al suelo, evitando disparos de las mismas naves, cada vez que destruye una nave el jugador recibira puntos, a su vez aparecera cada cierto tiempo un platillo que al destruirlo le dará más puntaje al jugador, todos los enemigos seran controlador por una IA que tiene como mision eliminar al jugador, el cual tendra 3 vidas, una vez que queden pocas naves, las naves restantes aumentaran su velocidad.***
+***A player will control a tank by means of a lever and a button, the tank's mission is to destroy the ships before they reach the ground, avoiding shots from the same ships, each time a ship is destroyed the player will receive points, in turn A saucer will appear from time to time that, when destroyed, will give the player more points. All enemies will be controlled by an AI whose mission is to eliminate the player, who will have 3 lives. Once there are few ships left, the remaining ships will increase their speed.***
 
-#### ***Libreria SFML***
+#### ***SFML library***
 
-***SFML, o Simple and Fast Multimedia Library, es una biblioteca de desarrollo de software para C++ que facilita la creación de aplicaciones multimedia y videojuegos. A continuación, se presentan las principales características y usos de SFML:
+***SFML, or Simple and Fast Multimedia Library, is a software development library for C++ that makes it easy to create multimedia applications and video games. Below are the main features and uses of SFML:***
 
-* Gráficos 2D: Proporciona funciones para dibujar formas, texto, imágenes y sprites, lo que permite crear gráficos en 2D de manera sencilla y eficiente.
+* 2D Graphics: Provides functions for drawing shapes, text, images and sprites, allowing you to create 2D graphics easily and efficiently.
 
-* Audio: Soporta la reproducción de sonidos y música en varios formatos. Incluye funcionalidades para manipular volúmenes, reproducir en bucle y gestionar múltiples efectos de sonido simultáneamente.
+* Audio: Supports the playback of sounds and music in various formats. Includes functionality to manipulate volumes, loop play, and manage multiple sound effects simultaneously.
 
-* Ventanas: Permite la creación y manejo de ventanas, y facilita la integración de OpenGL para gráficos más avanzados. Soporta la gestión de eventos de ventanas como el cierre, el redimensionamiento y el cambio de foco.
+* Windows: Allows the creation and management of windows, and facilitates the integration of OpenGL for more advanced graphics. Supports management of window events such as closing, resizing, and changing focus.
 
-* Entrada de usuario: Ofrece una interfaz para manejar la entrada de teclado, ratón y joysticks, permitiendo la creación de interacciones ricas y dinámicas.
+* User input: Provides an interface to handle keyboard, mouse and joystick input, allowing the creation of rich and dynamic interactions.
 
-* Red: Incluye funciones para la comunicación en red usando TCP y UDP, facilitando la creación de aplicaciones que requieren conectividad, como juegos multijugador.
+* Network: Includes functions for network communication using TCP and UDP, making it easier to create applications that require connectivity, such as multiplayer games.
 
-* Sistema: Proporciona utilidades para la gestión del tiempo, hilos (threads) y archivos, ayudando en la creación de aplicaciones más complejas y eficientes.
+* System: Provides utilities for managing time, threads, and files, helping to create more complex and efficient applications.
 
-SFML es apreciada por su simplicidad y facilidad de uso, lo que la hace ideal tanto para desarrolladores principiantes como para aquellos que buscan una biblioteca ligera y poderosa para proyectos multimedia. La comunidad de GitHub contribuye activamente al desarrollo de SFML, proporcionando mejoras, reportando errores y creando extensiones y herramientas adicionales que enriquecen la funcionalidad de la biblioteca.
+***SFML is appreciated for its simplicity and ease of use, making it ideal for both beginner developers and those looking for a lightweight and powerful library for multimedia projects. The GitHub community actively contributes to the development of SFML, providing improvements, reporting bugs, and creating additional extensions and tools that enrich the library's functionality.
 
-En resumen, SFML es una herramienta versátil y eficiente para desarrollar aplicaciones multimedia y videojuegos, proporcionando una amplia gama de funcionalidades con una interfaz intuitiva y fácil de usar.***
+In summary, SFML is a versatile and efficient tool for developing multimedia applications and video games, providing a wide range of functionalities with an intuitive and easy-to-use interface.***
