@@ -1,18 +1,29 @@
-output = bin
-source = src
-include = -Iinclude 
-dependencias = -lftxui-screen -lftxui-dom -lftxui-component
-flags =-std=c++2a $(dependencias) $(include)
+# Directorios de origen y destino
+SRC_DIR := src
+BIN_DIR := bin
 
+SFML := src/Enemie.cpp src/Bullet.cpp src/Wall.cpp src/Player.cpp -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
-run : $(output)/space_invaders
+# Obtener todos los archivos .cpp en el directorio de origen
+CPP_FILES := $(wildcard $(SRC_DIR)/*.cpp)
+
+# Generar los nombres de los archivos .exe en el directorio de destino
+EXE_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(BIN_DIR)/%.exe,$(CPP_FILES))
+
+# Regla para compilar cada archivo .cpp y generar el archivo .exe correspondiente
+$(BIN_DIR)/%.exe: $(SRC_DIR)/%.cpp $(wildcard include/*.hpp)
+	g++ $< -o $@ $(SFML) -Iinclude
+
+# Regla por defecto para compilar todos los archivos .cpp
+all: $(EXE_FILES)
+
+# Regla para ejecutar cada archivo .exe
+run%: $(BIN_DIR)/%.exe
 	./$<
-	
-$(output)/space_invaders : $(source)/main.cpp
-	g++ -o $@ $< $(flags)
 
-runPantalla : $(output)/pantalla
-	./$<
-	
-$(output)/pantalla : $(source)/pantalla.cpp
-	g++ -o $@ $< $(flags)
+# Regla para limpiar los archivos generados
+clean:
+	rm -f $(EXE_FILES)
+
+.PHONY: all clean
+.PHONY: run-%     #
