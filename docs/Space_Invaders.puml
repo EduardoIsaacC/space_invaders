@@ -1,67 +1,65 @@
 @startuml Space_Invaders
-class Juego{
-- iniciarJuego
-- finalzarJuego
+class Game{
+- startGame
+- endGame
 }
-class Jugador{
-- moverTanque
-- puntaje
+class Player{
+- moveTank
+- score
 }
-class IA{
-- atacarJugador
-- moverse
-* izquierda
-* derecha
+class AI{
+- attackPlayer
+- move
+* left
+* right
 }
-class Muro{
-- proteger
+class Wall{
+- protect
 }
-class Tanque{  
-- misparar
-- atacar
-- moverse
-*izquierda
-*derecha
+class Tank {
+- shoot
+- attack
+- move
+*left
+*right
 }
-class NavesEnemigas{
--atacarJugador
+class Enemies{
+-attackPlayer
+-move
+*left
+*right
 }
-class Misil{
--destruirEnemigo
--destruirJugador
+class Missile{
+-destroyEnemie
+-destroyPlayer
 }
-class Colisionable 
-class Boton{
--Disparar
-}
-class PlatilloEnemigo{
--Moverse
-*Izquierda
-*Derecha
+class Collidable 
+class Button{
+-shoot
 }
 class PalancaMovimiento{
-    -Moverse
-*Izquierda
-*Derecha
+-move
+*left
+*right
 }
-class MapaEspacio{
-    -personajesVolando
+class SpaceMap{
+    -charactersMoving
 }
 
-Jugador o-- Tanque
-Muro --|> Colisionable
-Misil --|> Colisionable
-IA o-- NavesEnemigas
-NavesEnemigas o-- Misil
-Boton --|> Misil
-Tanque *--  Misil
-Jugador o-- Boton
-NavesEnemigas --|> Colisionable
-Tanque --|> Colisionable
-PlatilloEnemigo --|> Colisionable
-Tanque o-- Misil
-NavesEnemigas *--  Misil
-PlatilloEnemigo --|> IA
-Jugador o-- PalancaMovimiento
-Juego *-- MapaEspacio
+Player o-- Tank
+Wall --|> Collidable
+Missile --|> Collidable
+AI o-- Enemies
+Enemies o-- Missile
+Button --|> Missile
+Tank--  Missile
+Player o-- Button
+Enemies --|> Collidable
+Tank-|> Collidable
+Enemies --|> Collidable
+Tank-- Missile
+Enemies *--  Missile
+Enemies --|> AI
+Player o-- PalancaMovimiento
+Game *-- SpaceMap
 @enduml
