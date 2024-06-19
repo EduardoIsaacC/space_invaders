@@ -29,13 +29,20 @@
 
 * System: Provides utilities for managing time, threads, and files, helping to create more complex and efficient applications.
 
-***SFML is appreciated for its simplicity and ease of use, making it ideal for both beginner developers and those looking for a lightweight and powerful library for multimedia projects. The GitHub community actively contributes to the development of SFML, providing improvements, reporting bugs, and creating additional extensions and tools that enrich the library's functionality.
+***SFML is appreciated for its simplicity and ease of use, making it ideal for both beginner developers and those looking for a lightweight and powerful library for multimedia projects. The GitHub community actively contributes to the development of SFML, providing improvements, reporting bugs, and creating additional extensions and tools that enrich the library's functionality.***
 
-In summary, SFML is a versatile and efficient tool for developing multimedia applications and video games, providing a wide range of functionalities with an intuitive and easy-to-use interface.***
+***In summary, SFML is a versatile and efficient tool for developing multimedia applications and video games, providing a wide range of functionalities with an intuitive and easy-to-use interface.***
 
-##### *** Game instructions *** 
+##### *** Game instructions. *** 
 
 *The player will have to destroy each ship in order to win.
 
 *The player will have 3 lives, which will decrease if the player is hit by the enemy bullet. Once the player is hit by 3 bullets, the game will end and the message will appear in the game terminal.
 
+*Both the player and the enemy ships will only be able to move from right to left, the player's controls will be the arrows on their device's keyboard, to shoot will be the space key.
+
+*If the player manages to shoot his enemy, he will be able to shoot another bullet. If the bullet does not attack an enemy, the player will have to wait for the bullet to disappear before being able to attack again.
+
+###### *** How to compile the program.***
+
+***If you want to compile the program you will only have to put in the terminal: make runmain***
