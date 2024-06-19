@@ -37,7 +37,7 @@ class Collidable
 class Button{
 -shoot
 }
-class PalancaMovimiento{
+class LeverMove{
 -move
 *left
 *right
