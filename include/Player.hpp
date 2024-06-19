@@ -18,7 +18,7 @@ public:
     bool Shoot();
     void Takelife();
     bool Alive();
-    void Showlife();
+    int getLife() const { return life; }
     Vector2f pos();
     virtual void draw(RenderTarget &rt, RenderStates rs) const;
 };

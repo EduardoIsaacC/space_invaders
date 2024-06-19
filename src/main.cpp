@@ -48,18 +48,17 @@ int main()
         throw new exception();
     }
     // Crear un objeto de texto ARCADE
-    Text text2;
+    Text lifeText;
     if (!spritesheet.loadFromFile("./assets/images/spritesheet.png"))
     {
         cout << "Error al cargar la textura\n";
         throw new exception();
     }
     // Cargar una fuente de texto
-    text2.setFont(font2);
-    text2.setString("¿Podras ganar?");
-    text2.setCharacterSize(40);
-    text2.setPosition(100, 100);
-    text2.setFillColor(sf::Color::White);
+    lifeText.setFont(font2);
+    lifeText.setCharacterSize(25);
+    lifeText.setPosition(0, 0);
+    lifeText.setFillColor(sf::Color::White);
 
     Player player(288, 555, spritesheet);
 
@@ -153,6 +152,8 @@ int main()
             window.close();
         }
 
+         lifeText.setString("Lives: " + std::to_string(player.getLife()));
+
         window.clear();
 
         if (bulletActive)
@@ -175,7 +176,7 @@ int main()
             window.draw(wall[i]);
 
         window.draw(player);
-        window.draw(text2);
+        window.draw(lifeText);
         window.display();
     }
     return 0;
