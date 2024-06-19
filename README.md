@@ -46,3 +46,54 @@
 ###### ***How to compile the program.***
 
 ***If you want to compile the program you will only have to put in the terminal: make runmain***
+
+###### ***code explanation***
+
+***Inclusion of libraries and initial declarations:***
+
+* Necessary libraries such as <iostream>, <SFML/Graphics.hpp>, and own classes such as Player.hpp, Bullet.hpp, Enemie.hpp and Wall.hpp are included.
+* Global variables are defined and some structures are initialized as vectors to store enemies, bullets and walls.
+
+***Game initialization:***
+
+* A font and texture are loaded from files (Arcade Classic.ttf and spritesheet.png respectively).
+* Graphic and text objects (Text and Font) are configured to display text on the screen, such as the "ARCADE" title and the life counter.
+
+***Object creation and initial configuration:***
+
+* A Player is created at a specific position with a texture loaded from the spritesheet.
+
+* Multiple enemies (Enemie) are created organized in a two-dimensional array (vector<vector<Enemie>> enemies) and initialized in positions calculated based on a sprite sheet.
+
+***Main game loop (main):***
+
+* The main window (RenderWindow) is configured with a specific size and frames per second limit.
+
+* The main loop ( while (window.isOpen())) handles user input events, updating game logic, and rendering elements on the screen.
+
+***Update functions (Update):***
+
+* UpdatePlayer: Handles player movement and bullet firing logic.
+* UpdateBulletPlayer: Handles the movement and collision logic of the player's bullets with enemies.
+* UpdateEnemies: Updates the position and movement logic of enemies, including their change of direction and bullet generation.
+* UpdateBulletsEnemies: Updates the position of enemy bullets and handles their collision with the player.
+* UpdateWall: Handles the collision logic of bullets with walls.
+
+***Game logic:***
+
+* The status of the player and enemies is constantly checked to determine if the game has been lost or won.
+* Objects are removed from the game (bullets, enemies) when they leave the screen or collide with other elements.
+
+***Rendering (tie):***
+
+* The window is cleared and all elements on the screen are drawn in each iteration of the main loop (window.clear() and window.display()).
+
+* The player, bullets, enemies, walls, and status text (lives) will be drawn on the screen.
+
+***Featured features:***
+
+* Event Handling: Window closing events (Event::Closed) are handled to ensure a clean exit from the game.
+
+* Interactions: Collisions between bullets and enemies, between bullets and the player, as well as between bullets and walls are managed.
+
+* User Feedback: Visual feedback is provided with on-screen text to indicate the state of the game (lost or won) and the number of player's lives remaining.
