@@ -33,16 +33,16 @@
 
 ***In summary, SFML is a versatile and efficient tool for developing multimedia applications and video games, providing a wide range of functionalities with an intuitive and easy-to-use interface.***
 
-##### *** Game instructions. *** 
+##### ***Game instructions.***
 
-*The player will have to destroy each ship in order to win.
+* The player will have to destroy each ship in order to win.
 
-*The player will have 3 lives, which will decrease if the player is hit by the enemy bullet. Once the player is hit by 3 bullets, the game will end and the message will appear in the game terminal.
+* The player will have 3 lives, which will decrease if the player is hit by the enemy bullet. Once the player is hit by 3 bullets, the game will end and the message will appear in the game terminal.
 
-*Both the player and the enemy ships will only be able to move from right to left, the player's controls will be the arrows on their device's keyboard, to shoot will be the space key.
+* Both the player and the enemy ships will only be able to move from right to left, the player's controls will be the arrows on their device's keyboard, to shoot will be the space key.
 
-*If the player manages to shoot his enemy, he will be able to shoot another bullet. If the bullet does not attack an enemy, the player will have to wait for the bullet to disappear before being able to attack again.
+* If the player manages to shoot his enemy, he will be able to shoot another bullet. If the bullet does not attack an enemy, the player will have to wait for the bullet to disappear before being able to attack again.
 
-###### *** How to compile the program.***
+###### ***How to compile the program.***
 
 ***If you want to compile the program you will only have to put in the terminal: make runmain***
