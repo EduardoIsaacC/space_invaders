@@ -1,4 +1,7 @@
 # space_invaders
+
+***Let's go back in time, who doesn't miss playing on old machines? Well, we based it on that idea to bring the game Space Invaders back to life. The game was launched on the market in 1978, which was inspired by famous movies of those years (Star Wars, War of the Worlds and Breakout).***
+
 ![Space_Invaders](https://media.es.wired.com/photos/643859cbf381a957088482dc/master/w_1600,c_limit/space-invaders-atari-2600.png)
 
 [Game information](https://es.wikipedia.org/wiki/Space_Invaders)
