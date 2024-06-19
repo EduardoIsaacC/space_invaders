@@ -56,7 +56,7 @@ int main()
     }
     // Cargar una fuente de texto
     text2.setFont(font2);
-    text2.setString("cout<<Player.life<<'\n'");
+    text2.setString("¿Podras ganar?");
     text2.setCharacterSize(40);
     text2.setPosition(100, 100);
     text2.setFillColor(sf::Color::White);
@@ -180,38 +180,6 @@ int main()
     }
     return 0;
 }
-
-//     // Cargar una fuente de texto
-//     sf::Font font2;
-//     if (!font2.loadFromFile("C:/Users/Eduardo/Documents/GitHub/space_invaders/fonts/Arcade Classic.ttf"))
-//     {
-//         // Manejar el error si no se puede cargar la fuente
-//         return -1;
-//     }
-//     // Crear un objeto de texto ARCADE
-//     sf::Text text2;
-//     text2.setFont(font2);
-//     text2.setString("life'");
-//     text2.setCharacterSize(40);
-//     //text2.setPosition(100, 100);
-//     text2.setFillColor(sf::Color::White);
-// while (window.isOpen())
-//     {
-//         sf::Event event;
-//         while (window.pollEvent(event))
-//         {
-//             if (event.type == sf::Event::Closed)
-//             {
-//                 window.close();
-//             }
-//         }
-
-//         window.clear();
-//         window.draw(text2);
-//         window.display();
-//     }
-//     return 0;
-// }
 
 void UpdatePlayer(Player &player, Bullet &bulletPlayer)
 {

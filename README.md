@@ -11,7 +11,7 @@
 
 ### ***Character´s Description***
 
-***A player will control a tank by means of a lever and a button, the tank's mission is to destroy the ships before they reach the ground, avoiding shots from the same ships, each time a ship is destroyed the player will receive points, in turn A saucer will appear from time to time that, when destroyed, will give the player more points. All enemies will be controlled by an AI whose mission is to eliminate the player, who will have 3 lives. Once there are few ships left, the remaining ships will increase their speed.***
+***A player will control a tank by means of a lever and a button, the tank's mission is to destroy the ships before they reach the ground, avoiding shots from the same ships. All enemies will be controlled by an AI whose mission is to eliminate the player, who will have 3 lives. Once there are few ships left, the remaining ships will increase their speed.***
 
 #### ***SFML library***
 
@@ -32,3 +32,10 @@
 ***SFML is appreciated for its simplicity and ease of use, making it ideal for both beginner developers and those looking for a lightweight and powerful library for multimedia projects. The GitHub community actively contributes to the development of SFML, providing improvements, reporting bugs, and creating additional extensions and tools that enrich the library's functionality.
 
 In summary, SFML is a versatile and efficient tool for developing multimedia applications and video games, providing a wide range of functionalities with an intuitive and easy-to-use interface.***
+
+##### *** Game instructions *** 
+
+*The player will have to destroy each ship in order to win.
+
+*The player will have 3 lives, which will decrease if the player is hit by the enemy bullet. Once the player is hit by 3 bullets, the game will end and the message will appear in the game terminal.
+
