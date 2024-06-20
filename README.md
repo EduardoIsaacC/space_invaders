@@ -102,3 +102,5 @@
 * User Feedback: Visual feedback is provided with on-screen text to indicate the state of the game (lost or won) and the number of player's lives remaining.
 
 [![Captura-de-pantalla-2024-06-18-184357.png](https://i.postimg.cc/xdMXMbC3/Captura-de-pantalla-2024-06-18-184357.png)](https://postimg.cc/VSsscvXJ)
+
+[![Captura-de-pantalla-2024-06-19-221225.png](https://i.postimg.cc/wvWRjYMC/Captura-de-pantalla-2024-06-19-221225.png)](https://postimg.cc/VrCkKTjg)
