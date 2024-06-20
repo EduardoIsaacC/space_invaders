@@ -44,7 +44,7 @@ int main()
     if (!font2.loadFromFile("./fonts/Arcade Classic.ttf"))
     {
         // Manejar el error si no se puede cargar la fuente
-        cout<< "Error al cargar la fuente";
+        cout << "Error al cargar la fuente";
         throw new exception();
     }
     // Crear un objeto de texto ARCADE
@@ -152,7 +152,7 @@ int main()
             window.close();
         }
 
-         lifeText.setString("Lives: " + std::to_string(player.getLife()));
+        lifeText.setString("Lives: " + std::to_string(player.getLife()));
 
         window.clear();
 
