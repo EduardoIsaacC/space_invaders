@@ -9,8 +9,8 @@ Enemie::Enemie(int x, int y, Texture &texture, Vector2f p)
     sprite.setScale(3, 3);
     state = 0;
     timer = 0;
-    vel = 24;
-    rythm = 150;
+    vel = 500000000000;
+    rythm = 500000000000;
 }
 
 void Enemie::Update()
